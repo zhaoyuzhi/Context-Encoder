@@ -46,7 +46,8 @@ class InpaintDataset(Dataset):
         Returns:
             tuple: (top, left, height, width)
         """
-        height, width = shape
+        height = shape
+        width = shape
         mask = np.zeros((height, width), np.float32)
         times = np.random.randint(times)
         for i in range(times):
