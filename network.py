@@ -52,10 +52,10 @@ class PatchDiscriminator(nn.Module):
     def __init__(self, opt):
         super(PatchDiscriminator, self).__init__()
         # Down sampling
-        self.block1 = Conv2dLayer(opt.out_channels, 64, 4, 2, 1, pad_type=opt.pad, norm='none', sn=True)
-        self.block2 = Conv2dLayer(64, 128, 4, 2, 1, pad_type=opt.pad, norm=opt.norm, sn=True)
-        self.block3 = Conv2dLayer(128, 256, 4, 2, 1, pad_type=opt.pad, norm=opt.norm, sn=True)
-        self.block4 = Conv2dLayer(256, 512, 4, 2, 1, pad_type=opt.pad, norm=opt.norm, sn=True)
+        self.block1 = Conv2dLayer(opt.out_channels, 64, 4, 2, 1, pad_type = opt.pad, norm = 'none', sn = True)
+        self.block2 = Conv2dLayer(64, 128, 4, 2, 1, pad_type = opt.pad, norm = opt.norm, sn = True)
+        self.block3 = Conv2dLayer(128, 256, 4, 2, 1, pad_type = opt.pad, norm = opt.norm, sn = True)
+        self.block4 = Conv2dLayer(256, 512, 4, 2, 1, pad_type = opt.pad, norm = opt.norm, sn = True)
 
     def forward(self, x):
         x = self.block1(x)                                      # out: batch * 64 * 32 * 32
